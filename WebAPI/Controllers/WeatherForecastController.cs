@@ -22,5 +22,24 @@ namespace WebAPI.Controllers
         {
             return "valor" + id.ToString();
         }
+        
+
+
+        [HttpGet("pessoas")]
+        public ActionResult<IEnumerable<Pessoa>> GetPessoas()
+        {
+            return new[] {
+                new Pessoa {Nome = "Tobias"},  
+                new Pessoa {Nome = "Jonas"},
+                new Pessoa {Nome = "Paulo"},
+                new Pessoa {Nome = "Luan"}
+                };
+        }
+        
+       
+    }
+    public class Pessoa
+    {
+        public string Nome { get; set; }
     }
 }
